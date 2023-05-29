@@ -1,0 +1,2 @@
+# Flipendo
+Discord's bot
