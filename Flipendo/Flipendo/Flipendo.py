@@ -1,9 +1,7 @@
-﻿import datetime
-from time import timezone
-from xml.etree.ElementTree import tostring
+﻿from xml.etree.ElementTree import tostring
 
 import discord
-from datetime import date, tzinfo
+from FlipendoMessages import FlipendoMessages
 
 
 #Example code
@@ -24,17 +22,7 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!👍')
 
-    if message.content.startswith('$pin2'):
-        time = datetime.datetime.utcnow()
-        mtime = message.created_at
-        mtime = mtime.replace(tzinfo = None)
-
-        miliseconds = round((time - mtime).total_seconds() * 1000)
-        seconds = int(miliseconds / 1000)
-        miliseconds = miliseconds % 1000
-        
-        apiLatency = int((float(client.latency) * 1000) % 1000)
-
-        await message.channel.send('🏓Latency is ' + str(seconds) + 's ' + str(miliseconds) + 'ms. API Latency is '+ str(apiLatency) + 'ms')
+    if message.content.startswith('$ping'):
+        await message.channel.send(FlipendoMessages.pingMessage(message.created_at, client.latency))
 
 client.run('your token here')
