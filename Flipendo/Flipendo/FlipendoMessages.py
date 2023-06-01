@@ -4,6 +4,17 @@ class FlipendoMessages:
 
     @staticmethod
     def pingMessage(messageDate, latency):
+        """
+        Genera el mensaje del comando ping
+
+        Args:
+            messageDate: Datetime de creacion del mensaje
+            latency: La latencia del cliente
+
+        Return:
+            Devuelve el contenido del mensaje para hacer ping
+        """
+
         time = datetime.datetime.utcnow()
         mtime = messageDate
         mtime = mtime.replace(tzinfo = None)
