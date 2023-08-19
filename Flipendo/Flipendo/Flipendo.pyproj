@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FlipendoClass.py" />
     <Compile Include="Flipendo.py" />
     <Compile Include="FlipendoMessages.py" />
   </ItemGroup>

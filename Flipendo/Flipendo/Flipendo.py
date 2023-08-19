@@ -10,6 +10,7 @@ intents.members = True
 intents.message_content = True
 
 client = discord.Client(intents = intents)
+flipendoMessages = FlipendoMessages(client)
 
 #Crea un mensaje al cargar
 @client.event

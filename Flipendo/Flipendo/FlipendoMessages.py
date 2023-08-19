@@ -1,8 +1,11 @@
 ﻿import datetime
 
-class FlipendoMessages:
+from FlipendoClass import FlipendoClass
 
-    @staticmethod
+class FlipendoMessages(FlipendoClass):
+    def _init__(self, client):
+        super()._init__(client)
+    
     def pingMessage(messageDate, latency):
         """
         Genera el mensaje del comando ping
