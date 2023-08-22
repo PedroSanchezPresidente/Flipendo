@@ -3,10 +3,10 @@
 from FlipendoClass import FlipendoClass
 
 class FlipendoMessages(FlipendoClass):
-    def _init__(self, client):
-        super()._init__(client)
+    def __init__(self, client):
+        super().__init__(client)
     
-    def pingMessage(messageDate, latency):
+    def pingMessage(self, messageDate):
         """
         Genera el mensaje del comando ping
 
@@ -26,7 +26,7 @@ class FlipendoMessages(FlipendoClass):
         seconds = int(miliseconds / 1000)
         miliseconds = miliseconds % 1000
         
-        apiLatency = int(float(latency) * 1000)
+        apiLatency = int(float(self.client.latency) * 1000)
 
         return '🏓Latency is ' + str(seconds) + 's ' + str(miliseconds) + 'ms. API Latency is '+ str(apiLatency) + 'ms'
 
